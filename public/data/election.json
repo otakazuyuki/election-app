@@ -1,0 +1,25 @@
+{
+  "election-shuin-2026": {
+    "id": "election-shuin-2026",
+    "title": "第51回 衆議院議員総選挙",
+    "category": "shuin",
+    "voteDate": "2026-10-25",
+    "races": {
+      "dist-shuin-miyagi-1": {
+        "districtName": "宮城1区",
+        "candidacies": [
+          {
+            "personId": "person-doi-toru",
+            "isIncumbent": true,
+            "status": "候補"
+          },
+          {
+            "personId": "person-okamoto-akiko",
+            "isIncumbent": false,
+            "status": "候補"
+          }
+        ]
+      }
+    }
+  }
+}

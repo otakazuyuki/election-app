@@ -1,0 +1,22 @@
+[
+  {
+    "locationId": "loc-04101-aoba",
+    "prefecture": "宮城県",
+    "city": "仙台市",
+    "town": "青葉区",
+    "districts": {
+      "shuin": "dist-shuin-miyagi-1",
+      "sanin": "dist-sanin-miyagi",
+      "kengi": "dist-kengi-sendai-aoba"
+    }
+  },
+  {
+    "locationId": "loc-04202-ishinomaki",
+    "prefecture": "宮城県",
+    "city": "石巻市",
+    "districts": {
+      "shuin": "dist-shuin-miyagi-4",
+      "sanin": "dist-sanin-miyagi"
+    }
+  }
+]
