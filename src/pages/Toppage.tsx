@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useState,useEffect} from "react";
+import type {
+    PeopleMap,
+    DistrictsData,
+    ElectionMap,
+    Person,
+    Candidacy
+} from "../types/election";
 
 //トップページ
 export const TopPage = () => {
-    //State宣言
+    //データのState
+    const [people, setPeople] = useState<PeopleMap>({});
+    const [districts, setDistricts] = useState<DistrictsData>([]);
+    const [elections, setElections] = useState<ElectionMap>({});
+    const [loading, setLoading] = useState<boolean>(true);
+
+    //UIにまつわるState
     const [prefecture, setPrefecture] = useState<string>(""); // 選択された都道府県名
     const [city, setCity] = useState<string>("");             // 選択された市区町村名
     const [detailcity, setDetailcity] = useState<string>(""); // 選択された詳細市区町村名
@@ -38,6 +51,35 @@ export const TopPage = () => {
     //詳細地域データが存在するか判定する
     const hasDetailCity=Boolean(detailCityList[city]?.length);
 
+    //3つのJSONデータを非同期で読み込む
+    useEffect(() => {
+        const fetchAllData=async () => {
+            try{
+                const [peopleRes,districtsRes, electionRes]=await Promise.all([
+                    fetch("/data/people.json"),
+                    fetch("/data/districts.json"),
+                    fetch("/data/elections.json")
+                ]);
+
+                if(!peopleRes.ok || !districtsRes.ok || !electionRes.ok){
+                    throw new Error("データの取得に失敗しました");
+                }
+
+                const peopleData=await peopleRes.json();
+                const districtsData=await districtsRes.json();
+                const electionsData=await electionRes.json();
+
+                setPeople(peopleData);
+                setDistricts(districtsData);
+                setElections(electionsData);
+            } catch (error) {
+                console.error("データの取得中にエラーが発生しました:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchAllData();
+    }, []);
 
     // レンタリング
     return (
