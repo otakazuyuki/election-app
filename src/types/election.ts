@@ -30,14 +30,20 @@ export type DistrictsData=DistrictMapping[];
 export type Candidacy={
     personId:string;
     isIncumbent:boolean;
+    status?:string;
 };
+
+export type Race = {
+    districtName: string;
+    candidacies: Candidacy[];
+}
 
 export type ElectionEvent={
     id:string;
     title:string;
-    category:"shuin"|"sanin"|"shigi"|"governor"|"mayor";
+    category:"shuin"|"sanin"|"shigi"|"governor"|"mayor"|"kengi";
     voteDate:string;
-    races:Record<string,Candidacy[]>;
+    races:Record<string,Race>;
 };
 
 export type ElectionMap=Record<string,ElectionEvent>;

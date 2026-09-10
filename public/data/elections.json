@@ -8,16 +8,8 @@
       "dist-shuin-miyagi-1": {
         "districtName": "宮城1区",
         "candidacies": [
-          {
-            "personId": "person-doi-toru",
-            "isIncumbent": true,
-            "status": "候補"
-          },
-          {
-            "personId": "person-okamoto-akiko",
-            "isIncumbent": false,
-            "status": "候補"
-          }
+          { "personId": "person-doi-toru", "isIncumbent": true },
+          { "personId": "person-okamoto-akiko", "isIncumbent": false }
         ]
       }
     }
