@@ -1,4 +1,4 @@
-import {TopPage} from "./pages/Toppage";
+import {TopPage} from "./pages/Toppage.tsx";
 
 export function App(){
   return(

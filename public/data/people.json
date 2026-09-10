@@ -1,0 +1,16 @@
+{
+  "person-doi-toru": {
+    "id": "person-doi-toru",
+    "name": "土井 亨",
+    "kana": "どい とおる",
+    "party": "自由民主党",
+    "imageUrl": "/images/doi.jpg"
+  },
+  "person-okamoto-akiko": {
+    "id": "person-okamoto-akiko",
+    "name": "岡本 章子",
+    "kana": "おかもと あきこ",
+    "party": "立憲民主党",
+    "imageUrl": "/images/okamoto.jpg"
+  }
+}
